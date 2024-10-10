@@ -16,5 +16,18 @@ img {
   max-width: 100%;
 }
 
+/* AUTH */
+.auth-bg {
+  background: url('../images/auth-bg.png') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+
+.form-box {
+  background: #ffffffe5;
+}
+
 /* CALENDAR */
 
