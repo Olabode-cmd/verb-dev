@@ -29,5 +29,10 @@ img {
   background: #ffffffe5;
 }
 
+/* Others */
+.transform-up {
+  transform: translateY(-60px);
+}
+
 /* CALENDAR */
 
