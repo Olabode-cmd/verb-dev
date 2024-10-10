@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Student Management || Verbum</title>
+    <title>Classes and Exams || Verbum</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo-icon.png">
@@ -34,7 +34,7 @@
             <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
                 <div class="hidden md:block">
                     <p class="font-medium text-sm text-gray-600">Home / Dashboard</p>
-                    <h3 class="text-md md:text-xl text-blue-600 font-bold">Student Management</h3>
+                    <h3 class="text-md md:text-xl text-blue-600 font-bold">Teachers Management</h3>
                 </div>
 
 
@@ -183,7 +183,7 @@
                         </svg>
                     </li>
                     <li class="text-sm font-semibold text-gray-800 truncate" aria-current="page"></li>
-                    Students
+                    Teachers
                     </li>
                 </ol>
                 <!-- End Breadcrumb -->
@@ -229,9 +229,9 @@
                             </li>
 
                             <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-blue-500 text-sm text-white rounded-lg focus:outline-none"
-                                    href="students.html">
-                                    <i class="fa fa-graduation-cap text-white"></i>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 hover:bg-gray-100 text-sm text-gray-800 rounded-lg focus:outline-none"
+                                    href="index.html">
+                                    <i class="fa fa-graduation-cap text-gray-500"></i>
                                     <span>Student Management</span>
                                 </a>
                             </li>
@@ -240,7 +240,7 @@
                                 <a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100"
                                     href="teachers.html">
                                     <i class="fa fa-chalkboard-user text-gray-500"></i>
-                                    Teacher Management
+                                    Teachers Management
                                 </a>
                             </li>
 
@@ -253,9 +253,9 @@
                             </li>
 
                             <li>
-                                <a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100"
-                                    href="reports.html">
-                                    <i class="fa fa-pen text-gray-500"></i>
+                                <a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg bg-blue-600"
+                                    href="classes.html">
+                                    <i class="fa fa-pen text-white"></i>
                                     Class and Exam
                                 </a>
                             </li>
@@ -318,7 +318,7 @@
             <!-- your content goes here ... -->
             <div class="grid gap-4 grid-cols-2 md:grid-cols-[1fr,1fr,1fr,10rem] items-end">
                 <div class="flex flex-col">
-                    <label class="text-sm font-medium mb-1">Filter results</label>
+                    <label class="text-sm font-medium mb-1">Select class</label>
                     <select class="px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-sm">
                         <option value="" selected>All</option>
                         <option value="">JSS1</option>
@@ -331,9 +331,13 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <label class="text-sm font-medium mb-1">Choose date</label>
-                    <input type="date" placeholder="Select date"
-                        class="px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-sm">
+                    <label class="text-sm font-medium mb-1">Choose sprint</label>
+                    <select class="px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-sm">
+                        <option value="" selected>All</option>
+                        <option value="">JSS1 A</option>
+                        <option value="">JSS1 B</option>
+                        <option value="">JSS1 C</option>
+                    </select>
                 </div>
 
                 <div class="relative">
@@ -347,263 +351,23 @@
                     </div>
                     <input type="text"
                         class="py-2 ps-10 pe-16 block w-full bg-gray-50 border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                        placeholder="Search student list...">
+                        placeholder="Search class list...">
                 </div>
 
-                <div class="hs-dropdown hs-dropdown-example relative inline-flex">
-                    <button id="hs-dropdown-example" type="button"
-                        class="hs-dropdown-toggle inline-flex items-center gap-x-2 text-sm px-3 py-2 rounded-md border border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 duration-300"
-                        aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                        <div class="flex space-x-2 items-center">
-                            <span class="font-medium text-white text-sm">Create student</span>
-                            <i class="fa fa-chevron-down text-white"></i>
-                        </div>
-                    </button>
-
-                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 w-56 hidden z-10 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2"
-                        role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-example">
-                        <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:text-white hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-                            href="#">
-                            Import CSV
-                        </a>
-                        <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:text-white hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-                            href="enroll-student.html">
-                            Enroll now
-                        </a>
-                    </div>
-                </div>
+                <button type="button" class="text-center text-sm px-3 py-2 rounded-md border border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 duration-300">
+                    <span class="font-medium text-white text-sm">Create class</span>
+                </button>
             </div>
 
-            <div class="no-results">
+            <!-- <div class="no-results">
                 <div class="bg-white w-[95%] md:w-[70%] text-center px-3 py-6 rounded-lg mx-auto" 95%="">
                     <img src="assets/images/sleepy.png" alt="sleepy icon" class="w-95% md:w-[55%] lg:w-[45%] mx-auto">
 
-                    <h3 class="mt-8 font-semibold text-lg md:text-xl">No students at this time</h3>
-                    <p class="font-medium text-sm">Students will appear after they are enrolled.</p>
-
-                    <button class="mt-4 bg-blue-600 text-white text-sm px-4 py-2 rounded-lg font-medium hover:bg-blue-700 duration-150">Enroll now</button>
-                </div>
-            </div>
-
-            <!-- <div class="flex flex-col bg-white rounded-lg px-3 py-6">
-                <div class="overflow-x-auto ">
-                    <div class="min-w-full inline-block align-middle">
-                        <div data-hs-datatable='{
-                    "pageLength": 10,
-                    "pagingOptions": {
-                      "pageBtnClasses": "min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
-                    },
-                    "selecting": true,
-                    "rowSelectingOptions": {
-                      "selectAllSelector": "#hs-table-search-checkbox-all"
-                    },
-                    "language": {
-                      "zeroRecords": "<div class=\"py-10 px-5 flex flex-col justify-center items-center text-center\"><svg class=\"shrink-0 size-6 text-gray-500" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><div class=\"max-w-sm mx-auto\"><p class=\"mt-2 text-sm text-gray-600">No search results</p></div></div>"
-                    }
-                  }'>
-                            <div class="py-3">
-                                <div class="relative max-w-xs">
-                                    <label for="hs-table-input-search" class="sr-only">Search</label>
-                                    <input type="text" name="hs-table-search" id="hs-table-input-search"
-                                        class="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                                        placeholder="Search for items" data-hs-datatable-search="">
-                                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
-                                        <svg class="size-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24"
-                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <circle cx="11" cy="11" r="8"></circle>
-                                            <path d="m21 21-4.3-4.3"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="overflow-hidden">
-                                <table class="min-w-full">
-                                    <thead class="border-y border-gray-200">
-                                        <tr>
-                                            <th scope="col" class="py-1 px-3 pe-0 --exclude-from-ordering">
-                                                <div class="flex items-center h-5">
-                                                    <input id="hs-table-search-checkbox-all" type="checkbox"
-                                                        class="border-gray-300 rounded text-blue-600 focus:ring-blue-500">
-                                                    <label for="hs-table-search-checkbox-all"
-                                                        class="sr-only">Checkbox</label>
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Name
-                                            </th>
-
-                                            <th scope="col"
-                                                class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                ID
-                                            </th>
-
-                                            <th scope="col" class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Date registered
-                                            </th>
-
-                                            <th scope="col" class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Parent name
-                                            </th>
-
-                                            <th scope="col"
-                                                class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Address
-                                            </th>
-
-                                            <th scope="col" class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Contact
-                                            </th>
-
-                                            <th scope="col" class="py-1 group text-start text-sm font-semibold focus:outline-none">
-                                                Class
-                                            </th>
-
-                                            <th scope="col"
-                                                class="py-2 px-3 text-end font-semibold text-sm text-gray-500 --exclude-from-ordering">
-                                                More</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-200">
-                                        <tr>
-                                            <td class="py-3 ps-3">
-                                                <div class="flex items-center h-5">
-                                                    <input id="hs-table-search-checkbox-1" type="checkbox"
-                                                        class="border-gray-300 rounded text-blue-600 focus:ring-blue-500"
-                                                        data-hs-datatable-row-selecting-individual="">
-                                                    <label for="hs-table-search-checkbox-1"
-                                                        class="sr-only">Checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-sm font-medium text-gray-800">
-                                                <div class="flex items-center space-x-2">
-                                                    <img src="assets/images/pfp-1.png" alt="pfp">
-                                                    <span class="text-sm">Christina Bersh</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">#225-SRU</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">March 21, 2024</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">Mr Abe Bersh</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">1, Egbeda Close</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <div class="flex items-center space-x-2">
-                                                    <i class="fa fa-phone bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                    <i class="fa fa-envelope bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <span class="text-white text-sm bg-amber-400 px-4 py-2 rounded-full">JSS1</span>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-end text-sm font-medium">
-                                                <img src="/assets/images/dots.svg" alt="dots" class="cursor-pointer self-end inline-flex">
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="py-3 ps-3">
-                                                <div class="flex items-center h-5">
-                                                    <input id="hs-table-search-checkbox-1" type="checkbox"
-                                                        class="border-gray-300 rounded text-blue-600 focus:ring-blue-500"
-                                                        data-hs-datatable-row-selecting-individual="">
-                                                    <label for="hs-table-search-checkbox-1" class="sr-only">Checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-sm font-medium text-gray-800">
-                                                <div class="flex items-center space-x-2">
-                                                    <img src="assets/images/pfp-2.png" alt="pfp">
-                                                    <span class="text-sm">Tony Nanami</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">#225-SRU</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">March 21, 2024</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">Mr Kento Nanami</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">1, Egbeda Close</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <div class="flex items-center space-x-2">
-                                                    <i class="fa fa-phone bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                    <i class="fa fa-envelope bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <span class="text-white text-sm bg-purple-600 px-4 py-2 rounded-full">JSS3</span>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-end text-sm font-medium">
-                                                <img src="/assets/images/dots.svg" alt="dots" class="cursor-pointer self-end inline-flex">
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="py-3 ps-3">
-                                                <div class="flex items-center h-5">
-                                                    <input id="hs-table-search-checkbox-1" type="checkbox"
-                                                        class="border-gray-300 rounded text-blue-600 focus:ring-blue-500"
-                                                        data-hs-datatable-row-selecting-individual="">
-                                                    <label for="hs-table-search-checkbox-1" class="sr-only">Checkbox</label>
-                                                </div>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-sm font-medium text-gray-800">
-                                                <div class="flex items-center space-x-2">
-                                                    <img src="assets/images/pfp-3.png" alt="pfp">
-                                                    <span class="text-sm">Patrick Smith</span>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">#225-SRU</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">March 21, 2024</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">Mr Erwin Smith</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">Ia Junction, Iba new site</td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <div class="flex items-center space-x-2">
-                                                    <i class="fa fa-phone bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                    <i class="fa fa-envelope bg-blue-100 text-blue-600 rounded-full py-2 px-2 5"></i>
-                                                </div>
-                                            </td>
-                                            <td class="py-3 px-1 whitespace-nowrap text-sm text-gray-800 text-sm">
-                                                <span class="text-white text-sm bg-gray-800 px-4 py-2 rounded-full">SS1</span>
-                                            </td>
-                                            <td class="p-3 whitespace-nowrap text-end text-sm font-medium">
-                                                <img src="/assets/images/dots.svg" alt="dots" class="cursor-pointer self-end inline-flex">
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6">
-                    <p class="text-sm font-medium">Showing 1-3 of 300</p>
-                    <div class="pagination inline-flex items-center space-x-1">
-                        <a href="#"
-                            class="px-3 py-2 text-sm text-gray-500 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-gray-700">
-                            <i class="fa fa-chevron-left"></i>
-                        </a>
-                
-                        <a href="#" aria-current="page"
-                            class="px-3 py-2 text-sm text-white bg-blue-600 border border-blue-600 rounded hover:bg-blue-700">
-                            1
-                        </a>
-                        <a href="#"
-                            class="px-3 py-2 text-sm text-gray-500 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-gray-700">
-                            2
-                        </a>
-                        <span class="px-3 py-2 text-sm text-gray-500">...</span>
-                        <a href="#"
-                            class="px-3 py-2 text-sm text-gray-500 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-gray-700">
-                            10
-                        </a>
-                
-                        <a href="#"
-                            class="px-3 py-2 text-sm text-gray-500 bg-white border border-gray-200 rounded hover:bg-gray-100 hover:text-gray-700">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                    </div>
+                    <h3 class="mt-8 font-semibold text-lg md:text-xl">Select a sprint to see students in this class</h3>
+                    <p class="font-medium text-sm">You can create a new class and add students</p>
                 </div>
             </div> -->
+
 
         </div>
 
